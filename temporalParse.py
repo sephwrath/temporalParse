@@ -218,7 +218,7 @@ class TemporalParser:
                 self.tableRows.append(self.currentRow)
                 self.currentRow = []
 
-    def parseEvnets(self):
+    def parseEvents(self):
         for idx, section in enumerate(self.saveSections):
             if (section['type'] == self.TYPE_TABLE):
                 for rowIdx, row in enumerate(section['rows']):
@@ -294,7 +294,7 @@ temporParse = TemporalParser()
 htmltext = soup.encode('utf-8').decode('utf-8','ignore')
 temporParse.parse(soup)
 
-temporParse.parseEvnets()
+temporParse.parseEvents()
 
 
 
